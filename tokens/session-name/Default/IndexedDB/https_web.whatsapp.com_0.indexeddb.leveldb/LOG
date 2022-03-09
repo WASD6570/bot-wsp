@@ -1,0 +1,15 @@
+2022/03/09-13:07:10.542 8419 Reusing MANIFEST /home/wasd12/projects/freelos/test-bot/tokens/session-name/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/03/09-13:07:10.542 8419 Recovering log #3
+2022/03/09-13:07:10.545 8419 Reusing old log /home/wasd12/projects/freelos/test-bot/tokens/session-name/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000003.log 
+2022/03/09-13:07:30.325 841f Level-0 table #5: started
+2022/03/09-13:07:30.355 841f Level-0 table #5: 1064184 bytes OK
+2022/03/09-13:07:30.358 841f Delete type=0 #3
+2022/03/09-13:07:31.944 8418 Level-0 table #7: started
+2022/03/09-13:07:31.972 8418 Level-0 table #7: 1098733 bytes OK
+2022/03/09-13:07:31.975 8418 Delete type=0 #4
+2022/03/09-13:07:32.018 841c Compacting 1@1 + 1@2 files
+2022/03/09-13:07:32.058 841c Generated table #8@1: 17828 keys, 1005394 bytes
+2022/03/09-13:07:32.058 841c Compacted 1@1 + 1@2 files => 1005394 bytes
+2022/03/09-13:07:32.062 841c compacted to: files[ 0 0 1 0 0 0 0 ]
+2022/03/09-13:07:32.062 841c Delete type=2 #5
+2022/03/09-13:07:32.062 841c Delete type=2 #7

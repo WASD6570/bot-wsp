@@ -1,0 +1,26 @@
+2022/03/09-15:06:48.605 b104 Reusing MANIFEST /home/wasd12/projects/freelos/test-bot/tokens/session-wa/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/03/09-15:06:48.605 b104 Recovering log #153
+2022/03/09-15:06:48.648 b104 Reusing old log /home/wasd12/projects/freelos/test-bot/tokens/session-wa/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000153.log 
+2022/03/09-15:07:02.211 b116 Level-0 table #165: started
+2022/03/09-15:07:02.243 b116 Level-0 table #165: 1312794 bytes OK
+2022/03/09-15:07:02.247 b116 Delete type=0 #153
+2022/03/09-15:07:02.361 b115 Compacting 1@1 + 8@2 files
+2022/03/09-15:07:02.414 b115 Generated table #166@1: 35633 keys, 2261014 bytes
+2022/03/09-15:07:02.442 b115 Generated table #167@1: 2288 keys, 2160105 bytes
+2022/03/09-15:07:02.470 b115 Generated table #168@1: 2397 keys, 2161177 bytes
+2022/03/09-15:07:02.496 b115 Generated table #169@1: 2297 keys, 2157707 bytes
+2022/03/09-15:07:02.553 b115 Generated table #170@1: 23096 keys, 2262583 bytes
+2022/03/09-15:07:02.594 b115 Generated table #171@1: 16019 keys, 2219356 bytes
+2022/03/09-15:07:02.652 b115 Generated table #172@1: 86552 keys, 2232603 bytes
+2022/03/09-15:07:02.692 b115 Generated table #173@1: 53207 keys, 1098474 bytes
+2022/03/09-15:07:02.692 b115 Compacted 1@1 + 8@2 files => 16553019 bytes
+2022/03/09-15:07:02.697 b115 compacted to: files[ 0 0 8 0 0 0 0 ]
+2022/03/09-15:07:02.698 b115 Delete type=2 #156
+2022/03/09-15:07:02.698 b115 Delete type=2 #159
+2022/03/09-15:07:02.698 b115 Delete type=2 #165
+2022/03/09-15:07:02.698 b115 Delete type=2 #155
+2022/03/09-15:07:02.698 b115 Delete type=2 #161
+2022/03/09-15:07:02.698 b115 Delete type=2 #157
+2022/03/09-15:07:02.698 b115 Delete type=2 #158
+2022/03/09-15:07:02.698 b115 Delete type=2 #162
+2022/03/09-15:07:02.698 b115 Delete type=2 #160
