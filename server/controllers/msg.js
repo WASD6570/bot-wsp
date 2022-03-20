@@ -41,7 +41,7 @@ class FileSender {
       const result = await this.client.sendFile(
         this.number + "@c.us",
         filePath,
-        "lag"
+        "archivo"
       );
       return result;
     } catch (error) {
