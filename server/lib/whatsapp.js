@@ -1,5 +1,4 @@
 import { create, Whatsapp } from "venom-bot";
-import path from "../path.cjs";
 import * as fs from "fs";
 
 const TOKEN_DIR = "./tokens";
@@ -10,24 +9,23 @@ if (fs.existsSync(TOKEN_PATH)) {
   browserSessionToken = JSON.parse(fs.readFileSync(TOKEN_PATH));
 }
 
-function start(client) {
-  client.onMessage(async (message) => {
-    console.log(message);
-    if (message.body === "enviar" && message.isGroupMsg === false) {
-      try {
-        const result = await client.sendFile(
-          message.from,
-          path,
-          "test",
-          "test de envio"
-        );
-        console.log({ result });
-      } catch (error) {
-        console.log({ error }, "error when sending");
-      }
-    }
-  });
-}
+// function start(client) {
+//   client.onMessage(async (message) => {
+//     if (message.body === "enviar" && message.isGroupMsg === false) {
+//       try {
+//         const result = await client.sendFile(
+//           message.from,
+//           path,
+//           "test",
+//           "test de envio"
+//         );
+//         console.log({ result });
+//       } catch (error) {
+//         console.log({ error }, "error when sending");
+//       }
+//     }
+//   });
+// }
 
 export async function login() {
   try {
@@ -41,12 +39,11 @@ export async function login() {
 
     const result = client.getSessionTokenBrowser();
     await fs.promises.mkdir(TOKEN_DIR, { recursive: true });
-    fs.writeFile(TOKEN_PATH, JSON.stringify(result), (err) => console.log(err));
-
-    start(client);
+    fs.writeFile(TOKEN_PATH, JSON.stringify(result), (err) => {
+      if (err) console.log(err, "error en el write");
+    });
+    return client;
   } catch (error) {
-    console.log(error);
+    console.log(error, "error en el login");
   }
 }
-
-export function sendPdf() {}
