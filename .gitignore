@@ -1,3 +1,4 @@
 node_modules
 tokens
-pdfs
+.env
+server/pdfs/*
