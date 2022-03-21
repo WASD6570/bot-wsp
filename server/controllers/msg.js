@@ -1,5 +1,6 @@
 import * as https from "https";
 import * as fs from "fs";
+import * as path from "path";
 
 /**
  * FileSender, esta clase hace el envio de arhivos y mensajes
@@ -97,11 +98,25 @@ class FileSender {
 
   async downloadFiles() {
     //crea el directorio de descarga en base al id
-    const dir = `./server/pdfs/${this.id}`;
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, {
-        recursive: true,
-      });
+    let dir;
+    if (process.env.OS.includes("Windows")) {
+      const { pathname } = new URL(`..\\pdfs\\${this.id}`, import.meta.url);
+      const arregloBarras = pathname.substring(1);
+      dir = arregloBarras.replace(/\//g, "\\");
+
+      console.log(dir);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, {
+          recursive: true,
+        });
+      }
+    } else {
+      dir = `./server/pdfs/${this.id}`;
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, {
+          recursive: true,
+        });
+      }
     }
 
     // mapea el array de urls con el que se construyo la instacia del sender
