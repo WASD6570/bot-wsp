@@ -126,7 +126,9 @@ class FileSender {
             );
             if (process.env.OS.includes("Windows")) {
               const windowsPath = pathname.substring(1);
-              const result = await this.fileSender(windowsPath);
+              //const testPath = windowsPath.replace(/\\/g, "/");
+              const readyPath = windowsPath.replace(/\//g, "\\");
+              const result = await this.fileSender(readyPath);
               resolve(result);
             } else {
               const result = await this.fileSender(pathname);

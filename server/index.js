@@ -35,7 +35,10 @@ app.post("/api/send-files", authMiddleware, (req, res) => {
         const { pathname } = new URL(`./pdfs/`, import.meta.url);
         if (process.env.OS.includes("Windows")) {
           const windowsPath = pathname.substring(1);
-          rimraf(windowsPath, (err) => {
+          //const testPath = windowsPath.replace(/\\/g, "/");
+          const readyPath = windowsPath.replace(/\//g, "\\");
+          console.log(readyPath);
+          rimraf(readyPath, (err) => {
             if (err) console.error(err);
           });
         } else {
