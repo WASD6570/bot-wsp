@@ -128,9 +128,10 @@ class FileSender {
               const windowsPath = pathname.substring(1);
               const result = await this.fileSender(windowsPath);
               resolve(result);
+            } else {
+              const result = await this.fileSender(pathname);
+              resolve(result);
             }
-            const result = await this.fileSender(pathname);
-            resolve(result);
           });
         });
       });

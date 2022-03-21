@@ -33,9 +33,16 @@ app.post("/api/send-files", authMiddleware, (req, res) => {
       .finally(() => {
         //borra los archivos despues de enviarlos
         const { pathname } = new URL(`./pdfs/`, import.meta.url);
-        rimraf(pathname, (err) => {
-          if (err) console.error(err);
-        });
+        if (process.env.OS.includes("Windows")) {
+          const windowsPath = pathname.substring(1);
+          rimraf(windowsPath, (err) => {
+            if (err) console.error(err);
+          });
+        } else {
+          rimraf(pathname, (err) => {
+            if (err) console.error(err);
+          });
+        }
       });
   } catch (error) {
     res.json({ error: error, message: "error en el endpoint /api/send-files" });
