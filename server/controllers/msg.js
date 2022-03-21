@@ -124,8 +124,13 @@ class FileSender {
               `../pdfs/${this.id}/${index}.pdf`,
               import.meta.url
             );
-            const a = await this.fileSender(pathname);
-            resolve(a);
+            if (process.env.OS.includes("Windows")) {
+              const windowsPath = pathname.substring(1);
+              const result = await this.fileSender(windowsPath);
+              resolve(result);
+            }
+            const result = await this.fileSender(pathname);
+            resolve(result);
           });
         });
       });
