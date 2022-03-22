@@ -99,7 +99,7 @@ class FileSender {
   async downloadFiles() {
     //crea el directorio de descarga en base al id
     let dir;
-    if (process.env.OS.includes("Windows")) {
+    if (process.env.OS?.includes("Windows")) {
       const { pathname } = new URL(`..\\pdfs\\${this.id}`, import.meta.url);
       const arregloBarras = pathname.substring(1);
       dir = arregloBarras.replace(/\//g, "\\");
@@ -139,13 +139,14 @@ class FileSender {
               `../pdfs/${this.id}/${index}.pdf`,
               import.meta.url
             );
-            if (process.env.OS.includes("Windows")) {
+            if (process.env.OS?.includes("Windows")) {
               const windowsPath = pathname.substring(1);
               //const testPath = windowsPath.replace(/\\/g, "/");
               const readyPath = windowsPath.replace(/\//g, "\\");
               const result = await this.fileSender(readyPath);
               resolve(result);
             } else {
+              console.log(process.env);
               const result = await this.fileSender(pathname);
               resolve(result);
             }

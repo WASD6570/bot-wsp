@@ -32,7 +32,7 @@ app.post("/api/send-files", authMiddleware, (req, res) => {
       })
       .finally(() => {
         //borra los archivos despues de enviarlos
-        if (process.env.OS.includes("Windows")) {
+        if (process.env.OS?.includes("Windows")) {
           const { pathname } = new URL(`.\\pdfs\\`, import.meta.url);
           const windowsPath = pathname.substring(1);
           //const testPath = windowsPath.replace(/\\/g, "/");
