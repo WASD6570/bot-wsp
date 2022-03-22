@@ -146,7 +146,6 @@ class FileSender {
               const result = await this.fileSender(readyPath);
               resolve(result);
             } else {
-              console.log(process.env);
               const result = await this.fileSender(pathname);
               resolve(result);
             }
